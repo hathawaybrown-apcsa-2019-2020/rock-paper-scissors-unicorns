@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 public class RPS2 extends Application
 {
     // The Rock-Paper-Scissors Match
-    // private RPSMatch rpsMatch;
+    private RPSMatch rpsMatch;
     
     // Labels for displaying the win counts
     private Label lblPlayerWins =       new Label("Human Wins");
@@ -41,7 +41,7 @@ public class RPS2 extends Application
     public void start(Stage stage) throws Exception
     {
         // Start the match
-        // rpsMatch = new RPSMatch();
+        rpsMatch = new RPSMatch();
         
         // Create a Button or any control item
         Button btnChooseRock =     new Button("Rock");
@@ -123,9 +123,11 @@ public class RPS2 extends Application
      */
     private void rockClick(ActionEvent event)
     {
-        //rpsMatch.setHumanPlay("rock");
+        rpsMatch.setHumanPlay(RPSMatch.ROCK);
         lblStatus1.setText ("You have chosen Rock      ");
-        
+        rpsMatch.getResult();
+        lblStatus2.setText ("Computer has chosen " + rpsMatch.getComputerText());
+        lblStatus3.setText (rpsMatch.youWon());
         updateScores();
     }
     
@@ -135,11 +137,12 @@ public class RPS2 extends Application
      */
     private void paperClick(ActionEvent event)
     {
-        //rpsMatch.setHumanPlay("paper");
-        lblStatus1.setText ("You have chosen Paper     ");
-               
+        rpsMatch.setHumanPlay(RPSMatch.PAPER);
+        lblStatus1.setText ("You have chosen Paper     ");      
+        rpsMatch.getResult();
+        lblStatus2.setText ("Computer has chosen " + rpsMatch.getComputerText());
+        lblStatus3.setText (rpsMatch.youWon());
         updateScores();
-
     }
 
     /**
@@ -148,18 +151,19 @@ public class RPS2 extends Application
      */
     private void scissorsClick(ActionEvent event)
     {
-        //rpsMatch.setHumanPlay("scissors");
+        rpsMatch.setHumanPlay(RPSMatch.SCISSORS);
         lblStatus1.setText ("You have chosen Scissors  ");
-
+        rpsMatch.getResult();
+        lblStatus2.setText ("Computer has chosen " + rpsMatch.getComputerText());
+        lblStatus3.setText (rpsMatch.youWon());
         updateScores();
-
     }
 
     private void updateScores()
     {
-    //    lblPlayerWinCount.setText("" + rpsMatch.getHumanWins());
-    //    lblComputerWinCount.setText("" + rpsMatch.getComputerWins());
-    //    lblTieCount.setText("" + rpsMatch.getTies());
+        lblPlayerWinCount.setText("" + rpsMatch.getHumanWins());
+        lblComputerWinCount.setText("" + rpsMatch.getComputerWins());
+        lblTieCount.setText("" + rpsMatch.getTies());
 
     }
     
