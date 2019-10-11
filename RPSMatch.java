@@ -2,7 +2,7 @@
 /**
  * Write a description of class RPSMatch here.
  *
- * @Vedha Muvva, Carolyn Glasener, Suzy Schwabl
+ * @author Vedha Muvva, Carolyn Glasener, Suzy Schwabl
  * @version (2019-10-08)
  */
 public class RPSMatch
@@ -141,12 +141,7 @@ public class RPSMatch
             return "Computer Wins!";
         }
     }
-    
-    public void notCheat()
-    {
-        
-    }
-            
+         
     //for the actual match, if difference is 1 greater or 2 lower, then win
     //if the same then 
 }
