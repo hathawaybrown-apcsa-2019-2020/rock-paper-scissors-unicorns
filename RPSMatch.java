@@ -45,28 +45,31 @@ public class RPSMatch
     {
         humanSign = n;
     }
-    
+    /**
+     * 
+     * 
+     */
     public void setCompSign()
     {
-        if(humanWins >= compWins)
-        {
-            if(humanSign == 1)
-            {
-                compSign = 2;
-            }
-            else if(humanSign == 2)
-            {
-                compSign = 3;
-            }
-            else
-            {
-                compSign = 1;
-            }
-        }
-        else
-        {
+        //if(humanWins >= compWins)
+        //{
+            //if(humanSign == ROCK)
+            //{
+             //   compSign = PAPER;
+            //}
+            //else if(humanSign == PAPER)
+            //{
+                //compSign = SCISSORS;
+            //}
+            //else
+            //{
+                //compSign = ROCK;
+            //}
+        //}
+        //else
+        //{
             compSign = (int) (Math.random() * 3 + 1);
-        }
+        //}
     }
     
     public int getCompSign()
